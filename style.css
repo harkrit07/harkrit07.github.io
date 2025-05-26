@@ -19,7 +19,7 @@ body {
   margin-left: 30px;
   margin-top: 20px;
   font-size: 1.2rem;
-  font-family: cursive;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   color: #00FF7F;
 }
 
@@ -29,7 +29,7 @@ body {
   text-decoration: none;
   color: white;
   font-size: 1rem;
-  font-family: cursive;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding: 2px 2px 2px 2px;
   transition: transform 0.3s ease-in;
   border-radius: 5px;
@@ -57,7 +57,7 @@ body {
   align-items: center;
   color: white;
   margin-top: 95px;
-  font-family: cursive;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-left: 50px;
 }
 
@@ -103,7 +103,7 @@ body {
   color: white;
   text-decoration: none;
   font-weight: bold;
-  font-family: cursive;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .me {
@@ -113,14 +113,14 @@ body {
   justify-content: center;
   margin-top: 60px;
   font-weight: bold;
-  font-family: cursive;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-bottom: 20px;
 }
 
 .aboutme {
   width: 100%;
   border-collapse: collapse;
-  font-family: cursive;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 1rem;
 }
 
@@ -138,8 +138,8 @@ body {
   padding-top: 5px;
   color: white;
 }
-.download-btn
-{
+
+.download-btn {
   background: #00FF7F;
   color: #fff;
   border: none;
