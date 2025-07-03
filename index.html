@@ -84,6 +84,10 @@
               </svg>
             </button>
             <script>
+              function toggleMenu() {
+                const navbarHead = document.getElementById('navbarHead');
+                navbarHead.classList.toggle('active');
+              }
               function downloadResume() {
                 // Create a link to download the original resume file
                 const link = document.createElement('a');
@@ -91,6 +95,24 @@
                 link.download = 'Harkrit Resume.pdf';
                 link.click();
               }
+
+              // Close mobile menu when clicking on a link
+              document.querySelectorAll('.navbar-head a').forEach(link => {
+                link.addEventListener('click', () => {
+                  const navbarHead = document.getElementById('navbarHead');
+                  navbarHead.classList.remove('active');
+                });
+              });
+
+              // Close mobile menu when clicking outside
+              document.addEventListener('click', (e) => {
+                const navbar = document.querySelector('.navbar');
+                const navbarHead = document.getElementById('navbarHead');
+
+                if (!navbar.contains(e.target) && navbarHead.classList.contains('active')) {
+                  navbarHead.classList.remove('active');
+                }
+              });
             </script>
           </td>
         </tr>
