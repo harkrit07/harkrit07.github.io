@@ -1,20 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Harkrit Portfolio</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="script.js">
-</head>
-
 <body>
   <header>
     <!-- Navbar -->
     <div class="navbar">
       <div class="name">Harkrit</div>
-      <div class="navbar-head">
+      <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+      <div class="navbar-head" id="navbarHead">
         <a href="#About">About</a>
         <a href="#Education">Education</a>
         <a href="#Skills">Skills</a>
@@ -27,11 +17,11 @@
     <!-- Hero Section -->
     <div class="hero" id="Home">
       <div class="hero-image">
-        <img src="Harkrit.jpeg" alt="No Image Found" class="profile-image">
+        <img src="https://via.placeholder.com/400x300/333/fff?text=Harkrit" alt="Harkrit Profile" class="profile-image">
       </div>
       <div class="hero-content">
         <h1>
-          Hii, I'm
+          Hi, I'm
           <span class="hero-text">Harkrit</span>
         </h1>
         <p>
@@ -46,8 +36,8 @@
 
   <!-- About Section-->
   <div class="body-section" id="About">
+    <p class="me">About Me</p>
     <table class="aboutme">
-      <p class="me">About Me</p>
       <tbody class="tbody">
         <tr>
           <td class="aboutmetdone">Name</td>
@@ -77,48 +67,48 @@
           <td class="aboutmetdone">Resume</td>
           <td class="aboutmetdtwo">
             <button class="download-btn" onclick="downloadResume()">
-              <svg class="download-icon" viewBox="4 12 14 14" style="width: 14px; height: 64px; ">
+              <svg class="download-icon" viewBox="0 0 24 24">
                 <path d="M12 15.577l-3.538-3.539-1.415 1.414L12 18.405l4.953-4.953-1.414-1.414L12 15.577z" />
                 <path d="M11 3h2v9h-2V3z" />
                 <path d="M4 19h16v2H4v-2z" />
               </svg>
             </button>
-            <script>
-              function toggleMenu() {
-                const navbarHead = document.getElementById('navbarHead');
-                navbarHead.classList.toggle('active');
-              }
-              function downloadResume() {
-                // Create a link to download the original resume file
-                const link = document.createElement('a');
-                link.href = 'Harkrit Resume.pdf';  // Your original file
-                link.download = 'Harkrit Resume.pdf';
-                link.click();
-              }
-
-              // Close mobile menu when clicking on a link
-              document.querySelectorAll('.navbar-head a').forEach(link => {
-                link.addEventListener('click', () => {
-                  const navbarHead = document.getElementById('navbarHead');
-                  navbarHead.classList.remove('active');
-                });
-              });
-
-              // Close mobile menu when clicking outside
-              document.addEventListener('click', (e) => {
-                const navbar = document.querySelector('.navbar');
-                const navbarHead = document.getElementById('navbarHead');
-
-                if (!navbar.contains(e.target) && navbarHead.classList.contains('active')) {
-                  navbarHead.classList.remove('active');
-                }
-              });
-            </script>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
-</body>
 
-</html>
+  <script>
+    function toggleMenu() {
+      const navbarHead = document.getElementById('navbarHead');
+      navbarHead.classList.toggle('active');
+    }
+
+    function downloadResume() {
+      // Create a link to download the resume file
+      const link = document.createElement('a');
+      link.href = 'Harkrit Resume.pdf';
+      link.download = 'Harkrit Resume.pdf';
+      link.click();
+    }
+
+    // Close mobile menu when clicking on a link
+    document.querySelectorAll('.navbar-head a').forEach(link => {
+      link.addEventListener('click', () => {
+        const navbarHead = document.getElementById('navbarHead');
+        navbarHead.classList.remove('active');
+      });
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', (e) => {
+      const navbar = document.querySelector('.navbar');
+      const navbarHead = document.getElementById('navbarHead');
+      
+      if (!navbar.contains(e.target) && navbarHead.classList.contains('active')) {
+        navbarHead.classList.remove('active');
+      }
+    });
+  </script>
+</body>
