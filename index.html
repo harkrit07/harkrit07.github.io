@@ -1,3 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harkrit Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
 <body>
   <header>
     <!-- Navbar -->
@@ -17,7 +27,7 @@
     <!-- Hero Section -->
     <div class="hero" id="Home">
       <div class="hero-image">
-        <img src="https://via.placeholder.com/400x300/333/fff?text=Harkrit" alt="Harkrit Profile" class="profile-image">
+        <img src="Harkrit.jpeg" alt="Harkrit Profile" class="profile-image">
       </div>
       <div class="hero-content">
         <h1>
@@ -79,36 +89,15 @@
     </table>
   </div>
 
-  <script>
-    function toggleMenu() {
-      const navbarHead = document.getElementById('navbarHead');
-      navbarHead.classList.toggle('active');
-    }
+  <!-- Projects Section (if you want to add GitHub projects) -->
+  <div class="body-section" id="Projects">
+    <p class="me">Projects</p>
+    <div id="projects-container" class="projects-grid">
+      <!-- Projects will be loaded here by JavaScript -->
+    </div>
+  </div>
 
-    function downloadResume() {
-      // Create a link to download the resume file
-      const link = document.createElement('a');
-      link.href = 'Harkrit Resume.pdf';
-      link.download = 'Harkrit Resume.pdf';
-      link.click();
-    }
-
-    // Close mobile menu when clicking on a link
-    document.querySelectorAll('.navbar-head a').forEach(link => {
-      link.addEventListener('click', () => {
-        const navbarHead = document.getElementById('navbarHead');
-        navbarHead.classList.remove('active');
-      });
-    });
-
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (e) => {
-      const navbar = document.querySelector('.navbar');
-      const navbarHead = document.getElementById('navbarHead');
-      
-      if (!navbar.contains(e.target) && navbarHead.classList.contains('active')) {
-        navbarHead.classList.remove('active');
-      }
-    });
-  </script>
+  <script src="script.js"></script>
 </body>
+
+</html>
