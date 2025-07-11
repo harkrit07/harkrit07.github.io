@@ -5,12 +5,11 @@
 }
 
 body {
-  background-color: black;
   overflow-x: hidden;
 }
 
 .navbar {
-  color: wheat;
+  color: black;
   font-size: 1rem;
   display: flex;
   justify-content: space-between;
@@ -23,7 +22,7 @@ body {
 .name {
   font-size: 1.2rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: #00FF7F;
+  color: rgb(233, 98, 49);
   font-weight: bold;
 }
 
@@ -35,7 +34,7 @@ body {
 
 .navbar-head a {
   text-decoration: none;
-  color: white;
+  color: black;
   font-size: 1rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding: 0.5rem 1rem;
@@ -48,22 +47,21 @@ body {
 
 .navbar-head a:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0, 255, 127, 0.4);
+  box-shadow: 0 8px 15px rgba(233, 98, 49, 0.6);
   text-shadow:
-    0 0 10px #00FF7F,
-    0 0 15px #32CD32,
-    0 0 25px #00FF7F,
-    0 0 35px #90EE90;
-  background: rgba(0, 255, 127, 0.1);
-  color: #00FF7F;
+    0 0 10px rgb(233, 98, 49),
+    0 0 15px rgb(233, 98, 49),
+    0 0 25px rgb(233, 98, 49),
+    0 0 35px rgb(233, 98, 49);
+  background: rgba(183, 190, 187, 0.1);
+  color: rgb(233, 98, 49);
 }
 
-/* Mobile menu toggle */
 .menu-toggle {
   display: none;
   background: none;
   border: none;
-  color: white;
+  color: black;
   font-size: 1.5rem;
   cursor: pointer;
   padding: 0.5rem;
@@ -72,7 +70,7 @@ body {
 }
 
 .menu-toggle:hover {
-  color: #00FF7F;
+  color: rgb(233, 98, 49);
   background: rgba(0, 255, 127, 0.1);
 }
 
@@ -80,7 +78,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: white;
+  color: black;
   margin-top: 2rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   padding: 2rem;
@@ -99,14 +97,49 @@ body {
   width: min(400px, 80vw);
   height: min(300px, 60vw);
   object-fit: cover;
-  border-radius: 50%;
-  box-shadow: 0 0 5px #00FF7F, 0 0 10px #00FF7F, 0 0 20px #00FF7F, 0 0 40px #00FF7F;
+  border-radius: 100%;
+}
+
+.flip-card {
+  perspective: 1000px;
+  width: 100%;
+  height: 100%;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform .6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.flip-face img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.flip-back {
+  transform: rotateY(180deg);
 }
 
 .hero-content {
   flex: 1;
   text-align: center;
-  color: #fff;
+  color: black;
 }
 
 .hero-content h1 {
@@ -115,8 +148,8 @@ body {
 }
 
 .hero-text {
-  color: #00FF7F;
-  text-shadow: 0 0 5px #00FF7F, 0 0 10px #00FF7F, 0 0 20px #00FF7F, 0 0 40px #00FF7F;
+  color: rgb(233, 98, 49);
+  text-shadow: 0 0 20px rgb(233, 98, 49), 0 0 40px rgb(233, 98, 49);
 }
 
 .hero-content p {
@@ -125,20 +158,20 @@ body {
 }
 
 .btn {
-  background: #00FF7F;
-  color: #fff;
+  background: rgba(233, 98, 49, 0.9);
+  color: black;
   border: none;
   padding: 1rem 2rem;
   border-radius: 50px;
   font-size: 1rem;
   cursor: pointer;
   transition: 0.3s;
-  box-shadow: 0 0 10px #00FF7F, 0 0 20px #00FF7F;
+  box-shadow: 0 0 10px rgb(233, 98, 49), 0 0 20px rgb(233, 98, 49);
   display: inline-block;
 }
 
 .btn a {
-  color: white;
+  color: black;
   text-decoration: none;
   font-weight: bold;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -146,11 +179,11 @@ body {
 
 .btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 0 15px #00FF7F, 0 0 30px #00FF7F;
+  box-shadow: 0 0 15px rgb(233, 98, 49), 0 0 30px rgb(233, 98, 49);
 }
 
 .me {
-  color: #00FF7F;
+  color: rgb(233, 98, 49);
   font-size: clamp(1.8rem, 5vw, 2.5rem);
   display: flex;
   justify-content: center;
@@ -166,49 +199,93 @@ body {
   margin: 0 auto;
 }
 
-.aboutme {
-  width: 100%;
-  border-collapse: collapse;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 1rem;
-  background: rgba(255, 255, 255, 0.02);
-  border-radius: 10px;
+.about-paragraph {
+  font-size: 1.3em;
+  color: #333;
+  text-align: justify;
+  margin: 20px 0;
+  padding: 25px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 12px;
+  border-left: 5px solid #ff6b35;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+  position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 20px rgba(0, 255, 127, 0.1);
+  transition: all 0.3s ease;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.aboutme tr {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+.about-paragraph::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #ff6b35, #f7931e, #ff6b35);
+  animation: shimmer 2s infinite;
 }
 
-.aboutme tr:last-child {
-  border-bottom: none;
+.highlight {
+  background: linear-gradient(120deg, #a8edea 0%, #fed6e3 100%);
+  padding: 3px 8px;
+  border-radius: 5px;
+  font-weight: 600;
+  color: #2c3e50;
+  display: inline-block;
+  margin: 0 2px;
+  transition: all 0.2s ease;
 }
 
-.aboutmetdone {
-  padding: 1rem;
-  font-weight: bold;
-  width: 30%;
-  color: #00FF7F;
-  vertical-align: top;
+.highlight:hover {
+  transform: scale(1.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.about-paragraph:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  border-left-color: #f7931e;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
 }
 
 .aboutmetdtwo {
   padding: 1rem;
-  color: white;
+
+  color: black;
   vertical-align: top;
+  display: inline-flex;
+  /* behaves like inline, but lets us align items */
+  align-items: center;
+  /* vertically center icon with text baseline */
+  vertical-align: middle;
 }
 
 .download-btn {
-  background: #00FF7F;
-  color: #fff;
+  background: rgb(233, 98, 49);
+  color: black;
   border: none;
-  border-radius: 50%;
+  border-radius: 34%;
   width: 40px;
   height: 40px;
   cursor: pointer;
   transition: 0.3s;
-  box-shadow: 0 0 10px #00FF7F, 0 0 20px #00FF7F;
+  box-shadow: 0 0 10px rgb(233, 98, 49), 0 0 20px rgb(233, 98, 49);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -216,7 +293,7 @@ body {
 
 .download-btn:hover {
   transform: scale(1.1);
-  box-shadow: 0 0 15px #00FF7F, 0 0 30px #00FF7F;
+  box-shadow: 0 0 15px rgb(233, 98, 49), 0 0 30px rgb(233, 98, 49);
 }
 
 .download-icon {
@@ -225,7 +302,54 @@ body {
   fill: black;
 }
 
-/* Projects Section Styles */
+/* ===== Skills Section ===== */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.skill-card {
+  background: rgba(242, 127, 85, 0.08);
+  /* border: 1px solid rgba(233, 98, 49, 0.25); */
+  border-radius: 12px;
+  padding: 1.4rem 1rem;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skill-logo {
+  width: 40px;
+  height: 48px;
+  margin-bottom: 0.75rem;
+  filter: drop-shadow(0 0 5px rgba(233, 98, 49, 0.35));
+  transition: transform 0.3s;
+  
+}
+
+.skill-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #000;
+  object-fit: cover;
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(233, 98, 49, 0.35);
+}
+
+.skill-card:hover .skill-logo {
+  transform: scale(1.1) rotate(-2deg);
+}
+
+
+/* project section */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -237,31 +361,31 @@ body {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 10px;
   padding: 1.5rem;
-  border: 1px solid rgba(0, 255, 127, 0.2);
+  border: 1px solid rgba(233, 98, 49, 0.2);
   transition: all 0.3s ease;
 }
 
 .project:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 255, 127, 0.3);
-  border-color: #00FF7F;
+  box-shadow: 0 10px 30px rgba(233, 98, 49, 0.3);
+  border-color: rgb(233, 98, 49);
 }
 
 .project h3 {
-  color: #00FF7F;
+  color: rgb(233, 98, 49);
   margin-bottom: 1rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .project p {
-  color: white;
+  color: black;
   margin-bottom: 1rem;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.6;
 }
 
 .project a {
-  color: #00FF7F;
+  color: rgb(233, 98, 49);
   text-decoration: none;
   font-weight: bold;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -269,7 +393,7 @@ body {
 }
 
 .project a:hover {
-  text-shadow: 0 0 10px #00FF7F;
+  text-shadow: 0 0 10px rgb(233, 98, 49);
 }
 
 /* Tablet styles */
@@ -326,7 +450,7 @@ body {
     width: 100%;
     text-align: center;
     border-radius: 5px;
-    background: rgba(255, 255, 255, 0.05);
+    background: rgba(233, 98, 49, 0.5);
   }
 
   .hero {
@@ -350,11 +474,6 @@ body {
     height: min(210px, 50vw);
   }
 
-  .aboutme {
-    font-size: 0.9rem;
-  }
-
-  .aboutmetdone,
   .aboutmetdtwo {
     padding: 0.8rem;
   }
@@ -398,25 +517,8 @@ body {
     font-size: 0.9rem;
   }
 
-  .aboutme {
-    font-size: 0.8rem;
-  }
-
-  .aboutmetdone,
   .aboutmetdtwo {
     padding: 0.6rem;
-    display: block;
-    width: 100%;
-  }
-
-  .aboutmetdone {
-    background: rgba(0, 255, 127, 0.1);
-    font-weight: bold;
-  }
-
-  .aboutmetdtwo {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    padding-bottom: 1rem;
   }
 
   .download-btn {
@@ -457,7 +559,6 @@ body {
     padding: 0.5rem;
   }
 
-  .aboutmetdone,
   .aboutmetdtwo {
     padding: 0.5rem;
     font-size: 0.75rem;
@@ -508,3 +609,5 @@ body {
     max-width: 1400px;
   }
 }
+
+
